@@ -3,13 +3,12 @@ import torchvision
 import time
 
 def hiz_testi():
-    img = torch.randn(1, 3, 800, 800) # Standart bir test görüntüsü
+    img = torch.randn(1, 3, 800, 800) #rastgele bir görüntü oluşturulur.
     
-    # 1. Nesne Tespiti Modeli (Faster R-CNN with ResNet-50)
-    det_model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights="DEFAULT").eval()
+    det_model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights="DEFAULT").eval() #nesne tespiti modeli oluşturulur
     
-    # 2. Segmentasyon Modeli (Mask R-CNN with ResNet-50)
-    seg_model = torchvision.models.detection.maskrcnn_resnet50_fpn(weights="DEFAULT").eval()
+
+    seg_model = torchvision.models.detection.maskrcnn_resnet50_fpn(weights="DEFAULT").eval() #segmentasyon modeli oluşturulur
 
     # Nesne Tespiti Süre Ölçümü
     start = time.time()
